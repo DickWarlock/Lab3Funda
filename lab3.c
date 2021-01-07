@@ -5,7 +5,7 @@ int FibonacciRecursivo(int n){
         return n;
     }
     else{
-        return FibonacciRecursivo(n-1) +FibonacciRecursivo(n-2);
+        return FibonacciRecursivo(n-1) + FibonacciRecursivo(n-2);
     }
 }
 
@@ -17,7 +17,6 @@ int FibonacciIterativo(int n){
         j = i + j;
         i = j - i;
     }
-
     return j;
 }
 
