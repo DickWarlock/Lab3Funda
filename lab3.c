@@ -39,7 +39,6 @@ int main()
                 start = clock();
                 printf("%d",Fibonacci_Recursivo(n));
                 end = clock();
-                total = (end-start);
                 t_cpu = ((double) (end - start)) / CLOCKS_PER_SEC;
                 printf("Tiempo total de ejecucion de %f segundos.",t_cpu);
                 printf("\n\n");
@@ -48,14 +47,20 @@ int main()
             case (2):
                 printf("Ingrese el n-esimo numero POSITIVO que quiere que llegue la secuencia: \n");
                 scanf("%d",&n);
+                start = clock();
                 Fibonacci_Iterativo(n);
+                end = clock();
+                t_cpu = ((double) (end - start)) / CLOCKS_PER_SEC;
                 printf("\n\n");
                 system("pause");
                 break;
             case (3):
                 printf("Ingrese el n-esimo numero POSITIVO que quiere que llegue la secuencia: \n");
                 scanf("%d",&n);
+                start = clock();
                 Fibonacci_Surprise(n);
+                end = clock();
+                t_cpu = ((double) (end - start)) / CLOCKS_PER_SEC;
                 printf("\n\n");
                 system("pause");
                 break;
@@ -78,10 +83,8 @@ int Fibonacci_Recursivo(int n)
 int Fibonacci_Iterativo (int n)
 {
 
-    double t_cpu;
-    int i=1,j=0;
+    long double i=1,j=0;
     int k;
-    start = clock();
 
     for(k=1 ; k<=n ; k++)
     {
@@ -89,11 +92,7 @@ int Fibonacci_Iterativo (int n)
         i = j - i;
 
     }
-    printf("%d \t",j);
-    end = clock();
-    total = (end-start);
-    t_cpu = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("\nTiempo total de ejecucion de %f segundos.",t_cpu);
+    printf("%Lf \t",j);
 
     return 0;
 }
